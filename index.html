@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            margin: 50px auto;
+
+        }
+        ul{
+            width: 100%;
+            float: left;
+
+        }
+        ul img{
+
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+    var text={
+        oImgattr:[
+            ["imgs/2.jpg","imgs/3.jpg"],
+            ["imgs/4.jpg","imgs/5.jpg","imgs/6.jpg","imgs/3.jpg","imgs/3.jpg"   ],
+            ["imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg","imgs/6.jpg"]
+        ]
+
+    }
+    var oBox=document.getElementsByClassName("box")[0]
+    for(var i=0 ;i<text.oImgattr.length;i++){
+        var oUl=document.createElement("ul");
+        oBox.appendChild(oUl);
+    }
+    function init(num){
+        for(var i=0 ;i<text.oImgattr[num].length;i++){
+            var oImg=document.createElement("img")
+            oUl.appendChild(oImg);
+            oImg.src=text.oImgattr[num][i];
+            oImg.style.width=(1/text.oImgattr[num].length*100)+"%";
+        }
+    }
+    for(var i in text.oImgattr){
+        init(i)
+    }
+
+
+
+;
+
+</script>
+</html>
